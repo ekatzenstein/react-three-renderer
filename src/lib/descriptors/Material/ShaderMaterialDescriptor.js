@@ -24,6 +24,12 @@ class ShaderMaterialDescriptor extends MaterialDescriptorBase {
       simple: true,
       default: undefined,
     });
+    
+    this.hasProp('lights', {
+      type: PropTypes.boolean,
+      simple: true,
+      default: true,
+    });
 
     this.hasWireframe();
   }
