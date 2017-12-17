@@ -24,7 +24,7 @@ class ShaderMaterialDescriptor extends MaterialDescriptorBase {
       simple: true,
       default: undefined,
     });
-    
+
     this.hasProp('lights', {
       type: PropTypes.boolean,
       simple: true,
@@ -39,6 +39,10 @@ class ShaderMaterialDescriptor extends MaterialDescriptorBase {
 
     if (props.hasOwnProperty('uniforms')) {
       materialDescription.uniforms = props.uniforms;
+    }
+
+    if (props.hasOwnProperty('lights')) {
+      materialDescription.uniforms = props.lights;
     }
 
     if (props.hasOwnProperty('vertexShader')) {
@@ -67,6 +71,10 @@ class ShaderMaterialDescriptor extends MaterialDescriptorBase {
 
     if (!props.hasOwnProperty('uniforms')) {
       threeObject.uniforms = {};
+    }
+
+    if (!props.hasOwnProperty('lights')) {
+      threeObject.lights = true;
     }
   }
 }
